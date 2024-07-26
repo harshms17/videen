@@ -8,8 +8,13 @@
 html,body{
     width:100vw;
     height:100%;
-    overflow-x: hidden;
-
+    overflow-x: hidden;    
+}
+::selection{
+    color: red;
+    background-color: black;
+    text-shadow:yellow 2px 2px;
+    -webkit-text-stroke: 1px orange;
 }
 body::-webkit-scrollbar{
     display: none;
@@ -110,10 +115,10 @@ nav>button:hover{
 #left1{
     height: 100%;
     width: 50%;
-    position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
+    position: relative;
 }
 #imgbacklay{
     padding: 0 3vw;
@@ -165,4 +170,34 @@ nav>button:hover{
 #txt3page1{
     color: white;
     font-size: 18px;
+}
+#left1>div{
+    position: absolute;
+}
+#left1>div:nth-child(3){
+    display: flex;
+    gap: 1.5vw;
+    right: 0;
+    bottom: 3vw;
+}
+#left1>div:nth-child(2){
+    top: 3vw;
+    left: 2vw;
+}
+.ratecard{
+    background-color: rgb(35, 35, 35);
+    min-height: 18vh;
+    width: 12vw;
+    color: rgb(255, 227, 121);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.ratecard>div>div{
+    display: flex;
+    justify-content: center;
+}
+.ratecard>div>div>h1{
+    font-size: 50px;
+    color:rgb(231, 237, 244);
 }
