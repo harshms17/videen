@@ -1,200 +1,217 @@
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 
-html,body{
-    width:100vw;
-    height:100%;
-    overflow-x: hidden;    
+html,
+body {
+    width: 100%;
+    height: 100%;
 }
-::selection{
+::selection {
     color: red;
     background-color: black;
-    text-shadow:yellow 2px 2px;
+    text-shadow: yellow 2px 2px;
     -webkit-text-stroke: 1px orange;
 }
-body::-webkit-scrollbar{
-    display: none;
+
+#main{
+    background-color: black;
 }
-nav{
-    height:13vh;
+nav {
+    height: 13vh;
     width: 100%;
     display: flex;
     justify-content: space-between;
     align-items: center;
     background-color: rgb(35, 35, 35);
     padding: 2vh 5vw;
-    position: relative;
-    z-index: 99;
 }
-nav>img{
+
+nav>img {
     height: 8vh;
 }
-nav>ul{
+
+nav>ul {
     display: flex;
     color: rgb(231, 237, 244);
     gap: 25px;
     font-size: 1.2vw;
     list-style: none;
 }
-nav>ul>li:hover{
+
+nav>ul>li:hover {
     color: rgb(255, 227, 121);
     cursor: pointer;
 }
-.down1{
+
+.down1 {
     position: relative;
 }
-.drop1{
+
+.drop1 {
     left: 100%;
     top: 0;
 }
-.dropbox , .drop1{
+
+.dropbox,
+.drop1 {
     width: 14vw;
     opacity: 0;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    transform:translateY(-5%);
+    transform: translateY(-5%);
     position: absolute;
+    z-index: 20;
     transition: all ease 300ms;
 }
-.dropbox>ul , .drop1>ul{
+
+.dropbox>ul,
+.drop1>ul {
     margin-top: 1vh;
     width: 100%;
     background-color: rgb(26, 26, 26);
     color: rgb(231, 237, 244);
     list-style: none;
 }
-.drop1>ul{
+
+.drop1>ul {
     margin: 0;
 }
-.dropbox>ul>li , .drop1>ul>li{
+
+.dropbox>ul>li,
+.drop1>ul>li {
     font-size: 1.2vw;
     padding: 2vh;
     display: none;
     align-items: center;
 }
-.dropbox>ul>li:hover , .drop1>ul>li:hover{
+
+.dropbox>ul>li:hover,
+.drop1>ul>li:hover {
     background-color: rgb(35, 35, 35);
-    color:rgb(255, 227, 121);
+    color: rgb(255, 227, 121);
 }
+
 .dropdown:hover .dropbox,
-.down1:hover .drop1{
+.down1:hover .drop1 {
     opacity: 1;
     transform: translateY(0);
 }
+
 .dropdown:hover .dropbox>ul>li,
-.down1:hover .drop1>ul>li{
+.down1:hover .drop1>ul>li {
     display: flex;
 }
-nav>button{
-    transition: transform 300ms, scale 300ms , color 300ms;
+
+button {
+    transition: transform 300ms, scale 300ms, background-color 300ms;
     padding: 2.5vh 2vw;
     font-size: large;
     color: black;
-    border:0px;
-    background-color:rgb(255, 227, 121);
+    border: 2px solid transparent;
+    background-color: rgb(255, 227, 121);
 }
-nav>button:hover{
-    border:2px solid rgb(255, 227, 121);
-    background-color: rgb(35, 35, 35);
-    transform: scale(0.9);
-    cursor: pointer;
-    color: white;
-}
-#page1{
-    height: 100vh;
-    width: 100vw;
-    position: relative;
-    display: flex;
-}
-#page1::before{
-    content: '';
-    height: 100%;
-    width: 100%;
-    background-image: url('https://kfkit.rometheme.pro/videen/wp-content/uploads/sites/20/2022/03/L-4.jpg');
-    background-size:cover;
-    filter: brightness(0.4);
-    background-position: center 50%;
-    position: absolute;
-    z-index: -1;
-}
-#left1{
-    height: 100%;
-    width: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: relative;
-}
-#imgbacklay{
-    padding: 0 3vw;
-    backdrop-filter: brightness(0.7);
-}
-#right1{
-    height: 100%;
-    width: 50%;
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    justify-content:center;
-    align-items: start;
-    padding: 0 2vw;
-    gap: 3vh;
-}
-#right1>button{
-    transition: transform 300ms, scale 300ms , color 300ms;
-    padding: 2.5vh 1.5vw;
-    font-size: large;
-    color: black;
-    border:0px;
-    background-color:rgb(255, 227, 121);
-}
-#right1>button>b{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-#right1>button:hover{
-    border:2px solid rgb(255, 227, 121);
+
+button:hover {
+    border: 2px solid rgb(255, 227, 121);
     background-color: transparent;
     transform: scale(0.9);
     cursor: pointer;
     color: white;
 }
-#txt1page1{
+
+#page1 {
+    height: 100vh;
+    width: 100vw;
+    position: relative;
+    display: flex;
+}
+
+#page1::before {
+    content: '';
+    height: 100%;
+    width: 100%;
+    background-image: url('https://kfkit.rometheme.pro/videen/wp-content/uploads/sites/20/2022/03/L-4.jpg');
+    background-size: cover;
+    filter: brightness(0.4);
+    background-position: center 50%;
+    position: absolute;
+    z-index: -1;
+}
+
+#left1 {
+    height: 100%;
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+#imgbacklay {
+    padding: 0 3vw;
+    backdrop-filter: brightness(0.7);
+}
+
+#right1 {
+    height: 100%;
+    width: 50%;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+    padding: 0 2vw;
+    gap: 3vh;
+}
+
+#right1>button>b {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#txt1page1 {
     color: rgb(255, 227, 121);
     font-size: 25px;
 }
-#txt2page1{
-    color:white;
+
+#txt2page1 {
+    color: white;
     font-size: 70px;
 }
-#txt2page1 span{
-    color:rgb(255, 227, 121);
+
+#txt2page1 span {
+    color: rgb(255, 227, 121);
     font-size: 70px;
 }
-#txt3page1{
+
+#txt3page1 {
     color: white;
     font-size: 18px;
 }
-#left1>div{
+
+#left1>div {
     position: absolute;
 }
-#left1>div:nth-child(3){
+
+#left1>div:nth-child(3) {
     display: flex;
     gap: 1.5vw;
     right: 0;
     bottom: 3vw;
 }
-#left1>div:nth-child(2){
+
+#left1>div:nth-child(2) {
     top: 3vw;
     left: 2vw;
 }
-.ratecard{
+
+.ratecard {
     background-color: rgb(35, 35, 35);
     min-height: 18vh;
     width: 12vw;
@@ -203,11 +220,129 @@ nav>button:hover{
     justify-content: center;
     align-items: center;
 }
-.ratecard>div>div{
+
+.ratecard>div>div {
     display: flex;
     justify-content: center;
 }
-.ratecard>div>div>h1{
+
+.ratecard>div>div>h1 {
     font-size: 50px;
-    color:rgb(231, 237, 244);
+    color: rgb(231, 237, 244);
+}
+
+#page2 {
+    height: 150vh;
+    width: 100%;
+    background-color: black;
+    padding: 0 5vw;
+}
+
+#upperpage2 {
+    padding-top: 5vw;
+    height: 45vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1vw;
+    text-align: center;
+    opacity: 1;
+}
+
+#upperpage2>h1 {
+    color: rgb(255, 227, 121);
+    font-size: 22px;
+    font-weight: 400;
+}
+
+#upperpage2>h2 {
+    color: white;
+    font-size: 50px;
+}
+
+#upperpage2>h3 {
+    color: #878787;
+    font-size: 17px;
+    line-height: 1.5;
+    font-weight: 400;
+}
+
+#grid {
+    margin: 10px;
+    height: 100%;
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    grid-gap: 1vw;
+}
+
+.gridbox {
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+}
+.gridbox::after{
+    content: "";
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    z-index: 20;
+}
+.gridbox:nth-child(1):after{
+    background: url("https://kfkit.rometheme.pro/videen/wp-content/uploads/sites/20/2022/03/F3.jpg");
+    background-size: cover;
+}
+.gridbox:nth-child(2):after{
+    background: url("https://kfkit.rometheme.pro/videen/wp-content/uploads/sites/20/2022/03/F4.jpg");
+    background-size: cover;
+}
+.gridbox:nth-child(3):after{
+    background: url("https://kfkit.rometheme.pro/videen/wp-content/uploads/sites/20/2022/03/F6.jpg");
+    background-size: cover;
+}
+.gridbox:nth-child(4):after{
+    background: url("https://kfkit.rometheme.pro/videen/wp-content/uploads/sites/20/2022/03/F8.jpg");
+    background-size: cover;
+}
+.gridbox:nth-child(5):after{
+    background: url("https://kfkit.rometheme.pro/videen/wp-content/uploads/sites/20/2022/03/F7.jpg");
+    background-size: cover;
+}
+.gridbox:nth-child(6):after{
+    background: url("https://kfkit.rometheme.pro/videen/wp-content/uploads/sites/20/2022/03/F5.jpg");
+    background-size: cover;
+}
+.gridbox>div{
+    height: 50%;
+    width: 100%;
+    font-size: 20px;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    top: 60%;
+    gap: 2vw;
+    position: absolute;
+    z-index: 21;
+    transition: all ease .4s;
+    opacity: 0;
+}
+.gridbox>div>h1{
+    font-size: 25px;
+}
+.gridbox>div>button{
+    scale: 0.75;
+}
+.gridbox:hover>div{
+    top: 50%;
+    opacity: 1;
+    background: linear-gradient(0deg , black,transparent);
+}
+#page3{
+    height: 100vh;
+    width: 100%;
+    background-color: black;
 }
